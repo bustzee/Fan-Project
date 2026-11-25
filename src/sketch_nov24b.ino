@@ -6,6 +6,7 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(ledpin,OUTPUT);
   pinMode(butpin,INPUT_PULLUP);
+  //for printing out data
   Serial.begin(9600);
 
 }
@@ -15,8 +16,10 @@ void loop() {
   state = digitalRead(butpin);
   Serial.println(state);
   if (state==HIGH) {
+    //Set MOSFET (ledpin) to LOW - Button Off 
     digitalWrite(ledpin,LOW);
   } else {
+    //Set MOSFET (ledpin) to HIGH - Button On
     digitalWrite(ledpin,HIGH);
   }
 
