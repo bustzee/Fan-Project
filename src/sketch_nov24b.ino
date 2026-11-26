@@ -25,5 +25,5 @@ void loop() {
         //turn off
     }
 
-    //delay(500);
+    
 }
