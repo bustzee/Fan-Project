@@ -1,23 +1,29 @@
+int motorPin = 9;
+const int sensorPin = A0;
 
-int ledpin = 9;
-int butpin = 2;
-int state;
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(ledpin,OUTPUT);
-  pinMode(butpin,INPUT_PULLUP);
-  Serial.begin(9600);
-
+    pinMode(motorPin, OUTPUT);
+    Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  state = digitalRead(butpin);
-  Serial.println(state);
-  if (state==HIGH) {
-    digitalWrite(ledpin,LOW);
-  } else {
-    digitalWrite(ledpin,HIGH);
-  }
+    int reading = analogRead(sensorPin);
 
+    float voltage = reading * (5.0 / 1023.0);
+    float temperatureC = (voltage - 0.5) * 100.0;
+
+    Serial.print("Temperature: ");
+    Serial.println(temperatureC);
+    //convert readings to temperature
+    if (temperatureC > 30) {
+        digitalWrite(motorPin, HIGH);
+        Serial.println("ON");
+        //turn on
+    } else {
+        digitalWrite(motorPin, LOW);
+        Serial.println("OFF");
+        //turn off
+    }
+
+    //delay(500);
 }
