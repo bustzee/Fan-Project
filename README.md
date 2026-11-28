@@ -100,6 +100,20 @@ This program will collect the data from the `data.csv` file and output a scatter
 - The X axis indicates the Temperature (in C) and the y axis represents a binary value of either 0 or 1 which represents OFF or ON respectively.
 - The data is read from the `data.csv` file and then plotted using mathplotlib.
 
+ **Example Input:**
+| Temperature_C | Motor_State |
+|---:|:---|
+| 29.18 | OFF |
+| 29.67 | OFF |
+| 30.16 | ON |
+| 29.67 | OFF |
+| 30.16 | ON |
+| 30.65 | ON |
+
+**Example Output:**
+<img width="997" height="671" alt="image" src="https://github.com/user-attachments/assets/e80b5396-55a2-4d90-b47b-8efcd37febca" />
+
+
 ## Hardware Side:
 - Power Supply: Two AA batteries connected in series provide approximately 3V of external power to the DC motor.
 
