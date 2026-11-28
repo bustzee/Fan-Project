@@ -118,6 +118,7 @@ This program will collect the data from the `data.csv` file and output a scatter
 - Common Ground: The battery negative terminal, Arduino GND, TMP36 GND, and MOSFET Source share a common ground connection. This provides a common electrical reference for the control and power circuits.
 
 - Temperature-Based Automation: The fan automatically switches ON when the measured temperature exceeds the programmed threshold and switches OFF when the temperature falls below it.
+- **Important** Make sure to copy the contents of `src/sketch_nov24b.ino` into a new sketch on Arduino IDE. From there upload the code to the microcontroller while it is plugged in.
 
 
 # Roadmap Checklist
