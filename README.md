@@ -84,7 +84,35 @@ Run the Python visualization program:
 ```bash
 py data_grapher.py
 ```
-
 This program will collect the data from the `data.csv` file and output a scatterplot graph of Temperature vs Motor State.
+# How it works
 
+ 
+
+
+
+## Software Side:
+- The Arduino IDE outputs the temperature as well as the motor state (ON or OFF) while the microcontroller is running. This text was then saved to a `data.csv` file which is available in the `src` directory.
+- This data is then graphed in the form of a scatterplot where 0 represents OFF and 1 represents ON.
+- The X axis indicates the Temperature (in C) and the y axis represents a binary value of either 0 or 1 which represents OFF or ON respectively.
+- The data is read from the `data.csv` file and then plotted using mathplotlib.
+
+## Hardware Side:
+- Power Supply: Two AA batteries connected in series provide approximately 3V of external power to the DC motor.
+
+- Temperature Sensing: The TMP36 measures the surrounding temperature and produces an analog voltage corresponding to the measured temperature.
+
+- Analog Input: The TMP36 sends its output voltage to Arduino analog pin A0, where the Arduino reads the signal.
+
+- Temperature Conversion: The Arduino converts the analog reading into a temperature measurement in degrees Celsius.
+
+- Motor Control: Based on the measured temperature, the Arduino sends a HIGH or LOW signal through digital pin 9, which controls the Gate of the IRLZ44N MOSFET.
+
+- MOSFET Switching: The MOSFET acts as an electronic switch. When the Gate receives a HIGH signal, the MOSFET allows current to flow through the motor. When it receives a LOW signal, the MOSFET stops conducting.
+
+- Motor Operation: When activated, current flows from the external battery's positive terminal, through the DC motor, and through the MOSFET to ground. This powers the motor and spins the fan blades.
+
+- Common Ground: The battery negative terminal, Arduino GND, TMP36 GND, and MOSFET Source share a common ground connection. This provides a common electrical reference for the control and power circuits.
+
+- Temperature-Based Automation: The fan automatically switches ON when the measured temperature exceeds the programmed threshold and switches OFF when the temperature falls below it.
 
