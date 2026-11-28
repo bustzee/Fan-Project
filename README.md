@@ -2,6 +2,9 @@
 
 Final project for CS 193 class. A temperature controlled fan system using Arduino and C++.
 
+# The Problem:
+To create a temperature dependent DC motor driven fan and explore how software and hardware interacts with one another. To plot the data related to temperature, fan state, etc.
+
 # MVP scope
 
 1. A basic temperature controlled fan that turns on automatically when a certain temperature condition is met
@@ -21,7 +24,7 @@ Final project for CS 193 class. A temperature controlled fan system using Arduin
 3. Google Doc - For Documentation
 4. Youtube - for documentation
 5. draw.io (diagram)
-6. CSV (For data logging)
+6. CSV (For data logging and data storage)
 
 # Software Setup and Installation (FOR CS 193 GRADING THIS ASSIGNMENT):
 
@@ -91,7 +94,7 @@ This program will collect the data from the `data.csv` file and output a scatter
 
 
 
-## Software Side:
+## Software Side (For CS 193 Grading):
 - The Arduino IDE outputs the temperature as well as the motor state (ON or OFF) while the microcontroller is running. This text was then saved to a `data.csv` file which is available in the `src` directory.
 - This data is then graphed in the form of a scatterplot where 0 represents OFF and 1 represents ON.
 - The X axis indicates the Temperature (in C) and the y axis represents a binary value of either 0 or 1 which represents OFF or ON respectively.
@@ -116,3 +119,8 @@ This program will collect the data from the `data.csv` file and output a scatter
 
 - Temperature-Based Automation: The fan automatically switches ON when the measured temperature exceeds the programmed threshold and switches OFF when the temperature falls below it.
 
+
+# Roadmap Checklist
+- [x] **Working MVP:** Built a temperature-controlled fan that automatically turns ON/OFF based on a predefined temperature threshold.
+- [x] **Data Logger:** Implemented Arduino Serial Monitor data logging in CSV format, recording temperature measurements and motor state (ON/OFF).
+- [x] **Data Visualizer & Plotter:** Developed a Python application using pandas and mathplotlib to read CSV data and visualize motor behavior against temperature.
